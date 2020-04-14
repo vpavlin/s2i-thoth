@@ -32,5 +32,6 @@ RUN TMPFILE=`mktemp` && \
     sed -i '/  echo "---> Running application from .*/d' "${STI_SCRIPTS_PATH}/run" && \
     chown -R 1001:0 ${APP_ROOT} && \
     fix-permissions ${APP_ROOT} -P
+RUN dnf -y install llvm-toolset* llvm-devel*
 
 USER 1001
